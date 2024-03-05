@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goemetry Geneous</title>
+    <!-- daisi ui link below -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <header class="p-12">
+        <div class=" flex justify-between px-14 items-center bg-[#1090D81A] rounded-lg">
+            <div class="flex items-center">
+                <h1 class="text-[45px] font-semibold">Interactive <br><p class="text-[25px] font-medium">Goemetry Geneous</p></h1>
+            </div>
+            <div>
+                <button class="text-white text-base font-medium bg-[#1090D8] px-6 py-2 rounded-md">Blog</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- main content container  -->
+        <div class="flex flex-col md:flex-row">
+            <!-- shape card container -->
+            <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2"> 
+                <!-- triangle card  -->
+                    <div class="card w-96 bg-base-100 shadow-xl">
+                        <figure><img src="./images/Polygon 1.png" alt="Shoes" /></figure>
+                        <div class="card-body">
+                        <h2 class="card-title justify-center">Triangle</h2>
+                        <p class="text-center">Area: 0.5 X b X h</p>
+                            <div>
+                                <input id="triangle-base" class="w-24 text-2xl p-2 rounded-sm" type="text" placeholder="b">
+                                <span class="mr-4 ml-2">cm</span>
+                                <input id="triangle-height" class="w-24 text-2xl p-2 rounded-sm" type="text" placeholder="h">
+                                <span>cm</span>
+                            </div>
+                            <div>
+                                <p class="text-2xl">Area: <span id="triangle-area"></span> <span>cm<sup>2</sup></span></p>
+                            </div>
+                        <div class="card-actions justify-end">
+                            <button onclick="calculateTriangleArea()" class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                        </div>
+                    </div>
+                <!-- Rectangle card  -->
+                    <div class="card w-96 bg-base-100 shadow-xl">
+                        <figure><img src="./images/Rectangle 9.png" alt="Shoes" /></figure>
+                        <div class="card-body">
+                        <h2 class="card-title justify-center">Rectangle</h2>
+                        <p class="text-center">Area: w X l</p>
+                        <div>
+                            <input id="rectangle-width" class="w-24 p-2 text-2xl rounded-sm" type="text" placeholder="w">
+                            <span class="mr-4 ml-2">cm</span>
+                            <input id="rectangle-length" class="w-24 p-2 text-2xl rounded-sm" type="text" placeholder="l">
+                            <span>cm</span>
+                        </div>
+                        <div>
+                            <p class="text-2xl">Area: <span id="rectangle-area"></span><span>cm<sup>2</sup></span></p>
+                        </div>
+                        <div class="card-actions justify-end">
+                            <button onclick="calculateRectangleArea()" class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                        </div>
+                    </div>
+                <!-- perallelogram card  -->
+                    <div class="card w-96 bg-base-100 shadow-xl">
+                        <figure><img src="./images/Rectangle 10.png" alt="Shoes" /></figure>
+                        <div class="card-body">
+                        <h2 class="card-title justify-center">Parallelogram</h2>
+                        <p class="text-center">Area: b X h</p>
+                        <div>
+                            <input class="w-24 p-2 text-2xl rounded-sm" type="text" id="perallelogram-base">
+                            <span class="mr-4 ml-2">cm</span>
+                            <input class="w-24 p-2 text-2xl rounded-sm" type="text" id="perallelogram-height">
+                            <span>cm</span>
+                        </div>
+                        <div>
+                            <p class="text-2xl">Area: <span id="perallelogram-area"></span><span>cm<sup>2</sup></span></p>
+                        </div>
+                        <div class="card-actions justify-end">
+                            <button onclick="calculatePerallelogramArea()" class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                        </div>
+                    </div>
+                <!-- Rhombus card  -->
+                    <div class="card w-96 bg-base-100 shadow-xl">
+                        <figure><img src="./images/Rectangle 11.png" alt="Shoes" /></figure>
+                        <div class="card-body">
+                        <h2 class="card-title">Rhombus</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                        </div>
+                    </div>
+                <!-- Pentagon card  -->
+                    <div class="card w-96 bg-base-100 shadow-xl">
+                        <figure><img src="./images/Rectangle 9 (1).png" alt="Shoes" /></figure>
+                        <div class="card-body">
+                        <h2 class="card-title">Rhombus</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                        </div>
+                    </div>
+                <!-- ellipse card  -->
+                    <div class="card w-96 bg-base-100 shadow-xl">
+                        <figure><img src="./images/Ellipse 1.png" alt="Shoes" /></figure>
+                        <div class="card-body">
+                        <h2 class="card-title">Ellipse</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                        </div>
+                    </div>
+            </div>
+            <!-- area calculation container  -->
+            <div class="w-96 border-2 border-gray-700 rounded-md">
+                <h3 class="text-3xl text-center p-4">Area calculation</h3>
+            </div>
+        </div>
+    </main>
+
+    <script src="./scripts/triangle-calculate.js"></script>
+    <script src="./scripts/rectangle-calculate.js"></script> 
+    <script src="./scripts/perallelogram-calculate.js"></script> 
+</body>
+</html>
